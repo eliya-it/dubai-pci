@@ -1,0 +1,29 @@
+{
+  "name": "dubai-pci",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --exec ts-node src/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/express-session": "^1.18.1",
+    "@types/node": "^22.15.30",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@types/express": "^5.0.2",
+    "aws-sdk": "^2.1692.0",
+    "crypto": "^1.0.1",
+    "crypto-ts": "^1.0.2",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "ip-range-check": "^0.2.0",
+    "lodash": "^4.17.15"
+  }
+}
