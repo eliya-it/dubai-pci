@@ -19,12 +19,12 @@ class Encryptor implements EncryptorInterface {
   private readonly algorithm: string;
   private readonly key: Buffer;
 
-  constructor() {
+  constructor(key: string) {
     this.algorithm = "aes-256-cbc";
     if (!process.env.UAE_ENCRYPTION_KEY) {
       throw new Error("UAE_ENCRYPTION_KEY environment variable is not set");
     }
-    this.key = Buffer.from(process.env.UAE_ENCRYPTION_KEY, "hex");
+    this.key = Buffer.from(key, "hex");
   }
 
   encrypt(text: string) {

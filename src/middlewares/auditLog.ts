@@ -17,7 +17,7 @@ export const auditLog = (req: Request, res: Response, next: NextFunction) => {
       .digest("hex"),
     integrityHash: crypto
       .createHash("sha256")
-      .update(JSON.stringify(req.body))
+      .update(JSON.stringify(req.body || {}))
       .digest("hex"),
   };
   console.log("[UAE_AUDIT]", auditData); // In production we can send it to CloudWatch

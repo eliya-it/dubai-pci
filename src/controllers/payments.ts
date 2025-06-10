@@ -19,7 +19,8 @@ export const tokenize = asyncHandler(async (req, res, next) => {
   const token = `tok_${crypto.randomBytes(8).toString("hex")}`;
 
   // Encrypt PAN (UAE SRR 4.2)
-  const result = new Encryptor().encrypt(pan);
+
+  const result = new Encryptor(process.env.UAE_ENCRYPTION_KEY!).encrypt(pan);
 
   if (!result.ok) {
     return res.status(500).json({ error: result.error.message });
