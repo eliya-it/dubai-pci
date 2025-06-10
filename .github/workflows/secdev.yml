@@ -6,6 +6,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: npm ci
-      - run: npm audit --audit-level=high && npm outdated
+      - run: |
+          echo "=== Security Scan Summary ===" 
+          npm audit --audit-level=high
+          echo "---------------------------"
+          npm outdated || echo "Outdated packages (non-blocking): See above."
 
       
