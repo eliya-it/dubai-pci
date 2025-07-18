@@ -69,7 +69,6 @@ The CI/CD pipeline integrates Snyk and OWASP ZAP scanning, blue/green deployment
    ```bash
    cp .env.example .env
    ```
-Here's a clean, professional instruction block you can include in your `README.md` under a section like `## Environment Setup`, or you can create a short `SETUP.md` and link to it.
 
 ---
 
