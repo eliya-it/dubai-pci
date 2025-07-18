@@ -3,3 +3,5 @@ node_modules
 test.html
 logs/*
 !logs/.gitkeep
+./uploads
+*.pdf
