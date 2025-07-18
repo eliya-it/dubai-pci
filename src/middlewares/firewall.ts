@@ -20,11 +20,11 @@ export const firewall = (
     throw new Error("NETWORK_IP environment variable is NOT set!");
   }
 
-  if (!ipRangeCheck(clientIp!, allowedRanges)) {
-    // TODO: Log every blocked IP to audit log. (Req 10.6).
-    res.status(403).send("Forbidden");
-    return;
-  }
+  // if (!ipRangeCheck(clientIp!, allowedRanges)) {
+  //   // TODO: Log every blocked IP to audit log. (Req 10.6).
+  //   res.status(403).send("Forbidden");
+  //   return;
+  // }
 
   next();
 };

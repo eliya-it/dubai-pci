@@ -1,9 +1,12 @@
-import { Request as ExpressRequest } from "express";
+import { User } from "../entities/User";
 import "express-session";
 
-declare module "express" {
-  interface Request {
-    sessionID: string;
+declare global {
+  namespace Express {
+    interface Request {
+      sessionID: string;
+      user?: Partial<User> | User;
+    }
   }
 }
 
@@ -12,3 +15,6 @@ declare module "express-session" {
     id: string;
   }
 }
+
+// This export is needed to make the file a module
+export {};

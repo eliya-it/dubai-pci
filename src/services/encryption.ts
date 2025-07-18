@@ -1,4 +1,4 @@
-import crypto from "crypto";
+import crypto, { randomUUID } from "crypto";
 // Testing, for now
 import dotenv from "dotenv";
 
@@ -38,6 +38,7 @@ class Encryptor implements EncryptorInterface {
       encrypted += cipher.final("hex");
 
       return {
+        id: randomUUID(),
         encryptedText: encrypted,
         iv: iv.toString("hex"),
       };

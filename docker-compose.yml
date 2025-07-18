@@ -1,0 +1,28 @@
+version: '1.0'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app         # Syncs local code into container (for dev)
+      - /app/node_modules  # Prevent overwriting container deps
+    environment:
+      - DB_HOST=${DB_HOST}
+      - JWT_SECRET=${JWT_SECRET}
+      - MFA_ENCRYPTION_KEY=${MFA_ENCRYPTION_KEY}
+      - MASTER_KEY=${MASTER_KEY}
+      - UAE_ENCRYPTION_KEY=${UAE_ENCRYPTION_KEY}
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: amsq9367
+      POSTGRES_DB: dubai_pci
