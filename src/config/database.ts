@@ -21,10 +21,3 @@ export const AppDataSource = new DataSource({
 
 // Log database configuration (excluding sensitive data)
 const dbConfig = AppDataSource.options as any;
-console.log("Database Configuration:", {
-  host: dbConfig.host,
-  port: dbConfig.port,
-  database: dbConfig.database,
-  synchronize: dbConfig.synchronize,
-  logging: dbConfig.logging,
-});

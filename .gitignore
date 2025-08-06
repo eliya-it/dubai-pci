@@ -4,4 +4,6 @@ test.html
 logs/*
 !logs/.gitkeep
 ./uploads
+./build
+./dist
 *.pdf
